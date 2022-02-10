@@ -26,6 +26,31 @@ func TestConccat(t *testing.T) {
 	})
 }
 
+func TestLongestConcat(t *testing.T) {
+	t.Run("returns the longest string of the concatenated slice given", func(t *testing.T) {
+		stringsInput := []string{"Alfie", "Dog", "Cat", "Fish", "Dragon"}
+		want := "FishDragon"
+
+		got := longestconcat.LongestConcat(stringsInput, 2)
+
+		asserEqual(t, got, want)
+
+	})
+
+	t.Run("returns the longest string of the concatenated slice given", func(t *testing.T) {
+		stringsInput := []string{"Alfie", "Dog", "Cat", "Animal", "Bird", "Fish", "Dragon"}
+		want := "AnimalBirdFish"
+
+		got := longestconcat.LongestConcat(stringsInput, 3)
+
+		asserEqual(t, got, want)
+
+	})
+
+}
+
+
+
 
 func asserEqual(t *testing.T, got, want interface{}) {
 	if !reflect.DeepEqual(got, want) {
