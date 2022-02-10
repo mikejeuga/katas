@@ -59,6 +59,7 @@ func TestConcat(t *testing.T) {
 }
 
 func asserEqual(t *testing.T, got, want interface{}) {
+	t.Helper()
 	if !reflect.DeepEqual(got, want) {
 		t.Errorf("got %q but wanted %q", got, want)
 	}
