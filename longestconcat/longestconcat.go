@@ -6,6 +6,10 @@ import (
 
 
 func LongestConcat(input []string, k int) string{
+	if k > len(input) {
+		return ""
+	}
+
 	longestString := ""
 	concat := Concat(input, k)
 	for i := 0; i < len(concat)-k + 1 ; i++ {
