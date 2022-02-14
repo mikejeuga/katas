@@ -14,7 +14,7 @@ func TestMultiples(t *testing.T) {
 			want := 78
 			asserEqual(t, got, want)
 		})
-		t.Run("returns all the multiples of 3 and 5 below 20", func(t *testing.T) {
+		t.Run("returns all the multiples of 3 and 5 below 10", func(t *testing.T) {
 			got := Multiples35(10)
 			want := 23
 			asserEqual(t, got, want)
