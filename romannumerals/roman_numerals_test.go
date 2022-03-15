@@ -29,7 +29,7 @@ func TestRomanNumeral(t *testing.T) {
 			want: "III",
 		},
 		{
-			description: "the function should return III when given 4",
+			description: "the function should return IV when given 4",
 			input: 4,
 			want: "IV",
 		},
