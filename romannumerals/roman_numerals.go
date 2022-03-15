@@ -1,14 +1,16 @@
 package romannumerals
 
-func RomanNumeral(i int) string {
-	if i == 1 {
-		return "I"
+func RomanNumeral(input int) string {
+	output := ""
+
+	if input == 4 {
+		output = "IV"
+		return output
+	}
+	for i := 0; i < input; i++ {
+		output += "I"
 	}
 
-	if i == 2 {
-		return "II"
-	}
 
-
-	return "III"
+	return output
 }

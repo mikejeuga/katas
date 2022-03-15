@@ -27,6 +27,11 @@ func TestRomanNumeral(t *testing.T) {
 			input: 3,
 			want: "III",
 		},
+		{
+			description: "the function should return III when given 3",
+			input: 4,
+			want: "IV",
+		},
 	} {
 		t.Run(tc.description, func(t *testing.T) {
 			is := is.New(t)
