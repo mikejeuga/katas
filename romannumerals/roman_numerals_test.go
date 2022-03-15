@@ -22,13 +22,14 @@ func TestRomanNumeral(t *testing.T) {
 			description: "the function should return II when given 2",
 			input: 2,
 			want: "II",
-		},{
+		},
+		{
 			description: "the function should return III when given 3",
 			input: 3,
 			want: "III",
 		},
 		{
-			description: "the function should return III when given 3",
+			description: "the function should return III when given 4",
 			input: 4,
 			want: "IV",
 		},
