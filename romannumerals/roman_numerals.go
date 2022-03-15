@@ -15,8 +15,12 @@ func RomanNumeral(input int) string {
 	output := ""
 
 	for k, _ := range RomanMAP {
-		if k == input + 1 {
+		if input == k - 1 {
 			return RomanMAP[1] + RomanMAP[k]
+		} else if k == input {
+			return RomanMAP[input]
+		} else if input == k + 1{
+			return RomanMAP[k] + RomanMAP[1]
 		}
 	}
 
