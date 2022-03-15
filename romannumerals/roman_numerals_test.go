@@ -7,22 +7,31 @@ import (
 )
 
 func TestRomanNumeral(t *testing.T) {
-	is := is.New(t)
-	t.Run("the function should return I when given 1", func(t *testing.T) {
-
-		want := "I"
-
-		got := romannumerals.RomanNumeral(1)
-		is.Equal(got, want)
-	})
-
-	t.Run("the function should return II when given 2", func(t *testing.T) {
-
-		want := "II"
-
-		got := romannumerals.RomanNumeral(2)
-		is.Equal(got, want)
-	})
-
-}
-
+	t.Parallel()
+	for _, tc := range []struct {
+		description string
+		input int
+		want string
+	}{
+		{
+			description: "the function should return I when given 1",
+			input: 1,
+			want: "I",
+		},
+		{
+			description: "the function should return II when given 2",
+			input: 2,
+			want: "II",
+		},{
+			description: "the function should return III when given 3",
+			input: 3,
+			want: "III",
+		},
+	} {
+		t.Run(tc.description, func(t *testing.T) {
+			is := is.New(t)
+			got := romannumerals.RomanNumeral(tc.input)
+			is.Equal(got, tc.want)
+		})
+	}
+ }

@@ -4,5 +4,11 @@ func RomanNumeral(i int) string {
 	if i == 1 {
 		return "I"
 	}
-	return "II"
+
+	if i == 2 {
+		return "II"
+	}
+
+
+	return "III"
 }
