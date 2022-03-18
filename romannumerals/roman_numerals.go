@@ -6,6 +6,10 @@ type RomanToArabic struct {
 }
 
 var RomanMAP = []RomanToArabic{
+	{"M", 1000},
+	{"D", 500},
+	{"C", 100},
+	{"L", 50},
 	{"X", 10},
 	{"IX", 9},
 	{"V", 5},
@@ -19,25 +23,15 @@ var RomanMAP = []RomanToArabic{
 func RomanNumeral(input int) string {
 	output := ""
 
-	//numeral, ok := RomanMAP[input]
-	//if ok {
-	//	return numeral
-	//}
-
 	for input > 0 {
 		for _, value := range RomanMAP {
 			if input >= value.Arabic{
 				output += value.Roman
 				input -= value.Arabic
+				break
 			}
 		}
 	}
-
-
-	//for i := 0; i < input; i++ {
-	//	output += "I"
-	//}
-
 
 	return output
 }

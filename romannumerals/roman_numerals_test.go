@@ -38,16 +38,37 @@ func TestRomanNumeral(t *testing.T) {
 			input: 5,
 			want: "V",
 		},
-		//{
-		//	description: "the function should return VI when given 6",
-		//	input: 6,
-		//	want: "VI",
-		//},
-		//{
-		//	description: "the function should return CXXII when given 122",
-		//	input: 122,
-		//	want: "CXXII",
-		//},
+		{
+			description: "the function should return VI when given 6",
+			input: 6,
+			want: "VI",
+		},
+		{
+			description: "the function should return CXXII when given 122",
+			input: 122,
+			want: "CXXII",
+		},
+		{
+			description: "the function should return CL when given 150",
+			input: 150,
+			want: "CL",
+		},
+		{
+			description: "the function should return LXXIX when given 79",
+			input: 79,
+			want: "LXXIX",
+		},
+		{
+			description: "the function should return DLXII when given 562",
+			input: 562,
+			want: "DLXII",
+		},
+		{
+			description: "the function should return XICCLXVII when given 11267",
+			input: 1267,
+			want: "MCCLXVII",
+		},
+
 	} {
 		t.Run(tc.description, func(t *testing.T) {
 			is := is.New(t)
