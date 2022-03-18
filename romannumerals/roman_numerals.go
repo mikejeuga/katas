@@ -1,32 +1,42 @@
 package romannumerals
 
-var RomanMAP =  map[int]string{
-	1: "I",
-	5: "V",
-	10: "X",
-	50: "L",
-	100: "C",
-	500: "D",
-	1000: "M",
+type RomanToArabic struct {
+	Roman string
+	Arabic int
 }
+
+var RomanMAP = []RomanToArabic{
+	{"X", 10},
+	{"IX", 9},
+	{"V", 5},
+	{"IV", 4},
+	{"I", 1},
+}
+
+
 
 
 func RomanNumeral(input int) string {
 	output := ""
 
-	for k, _ := range RomanMAP {
-		if input == k - 1 {
-			return RomanMAP[1] + RomanMAP[k]
-		} else if k == input {
-			return RomanMAP[input]
-		} else if input == k + 1{
-			return RomanMAP[k] + RomanMAP[1]
+	//numeral, ok := RomanMAP[input]
+	//if ok {
+	//	return numeral
+	//}
+
+	for input > 0 {
+		for _, value := range RomanMAP {
+			if input >= value.Arabic{
+				output += value.Roman
+				input -= value.Arabic
+			}
 		}
 	}
 
-	for i := 0; i < input; i++ {
-		output += "I"
-	}
+
+	//for i := 0; i < input; i++ {
+	//	output += "I"
+	//}
 
 
 	return output
