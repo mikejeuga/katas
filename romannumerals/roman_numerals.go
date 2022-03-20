@@ -17,9 +17,6 @@ var RomanMAP = []RomanToArabic{
 	{"I", 1},
 }
 
-
-
-
 func RomanNumeral(input int) string {
 	output := ""
 
