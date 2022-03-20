@@ -64,9 +64,14 @@ func TestRomanNumeral(t *testing.T) {
 			want: "DLXII",
 		},
 		{
-			description: "the function should return XICCLXVII when given 11267",
+			description: "the function should return XICCLXVII when given 1267",
 			input: 1267,
 			want: "MCCLXVII",
+		},
+		{
+			description: "the function should return MCDVII when given 1407",
+			input: 1407,
+			want: "MCDVII",
 		},
 
 	} {
@@ -77,3 +82,76 @@ func TestRomanNumeral(t *testing.T) {
 		})
 	}
  }
+
+
+func TestEncoder(t *testing.T) {
+	t.Parallel()
+	for _, tc := range []struct {
+		description, input string
+		want int
+	}{
+		{
+			description: "the function should return 1 when given I",
+			input: "I",
+			want: 1,
+		},
+		{
+			description: "the function should return 2 when given II",
+			input: "II",
+			want: 2,
+		},
+		{
+			description: "the function should return 3 when given III",
+			input: "III",
+			want: 3,
+		},
+		{
+			description: "the function should return 4 when given IV",
+			input: "IV",
+			want: 4,
+		},
+		{
+			description: "the function should return 5 when given V",
+			input: "V",
+			want: 5,
+		},
+		{
+			description: "the function should return 6 when given VI",
+			input: "VI",
+			want: 6,
+		},
+		{
+			description: "the function should return 122 when given CXXII",
+			input: "CXXII",
+			want: 122,
+		},
+		{
+			description: "the function should return 150 when given CL",
+			input: "CL",
+			want: 150,
+		},
+		{
+			description: "the function should return 79 when given LXXIX",
+			input: "LXXIX",
+			want: 79,
+		},
+		{
+			description: "the function should return 562 when given DLXII",
+			input: "DLXII",
+			want: 562,
+		},
+		{
+			description: "the function should return 1267 when given XICCLXVII",
+			input: "MCCLXVII",
+			want: 1267,
+		},
+
+	} {
+		t.Run(tc.description, func(t *testing.T) {
+			is := is.New(t)
+			got := romannumerals.ArabicNumeral(tc.input)
+			is.Equal(got, tc.want)
+		})
+	}
+}
+
