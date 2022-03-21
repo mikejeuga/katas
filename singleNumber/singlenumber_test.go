@@ -23,6 +23,16 @@ func TestSingleNumber(t *testing.T) {
 			got: []int{2,2,1},
 			want: 1,
 		},
+		{
+			description: "should return 4 if given [4,1,2,1,2]",
+			got: []int{4,1,2,1,2},
+			want: 4,
+		},
+		{
+			description: "should return 5 if given [,1,2,5,1,2]",
+			got: []int{1,2,5,1,2},
+			want: 5,
+		},
 	} {
 		t.Run(tc.description, func(t *testing.T) {
 			is := is.New(t)
