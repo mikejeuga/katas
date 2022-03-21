@@ -5,11 +5,6 @@ type RomanToArabic struct {
 	Arabic int
 }
 
-type ArabicToRoman struct {
-	Arabic int
-	Roman string
-}
-
 var RomanMAP = []RomanToArabic{
 	{"M", 1000},
 	{"CM", 900},

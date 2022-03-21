@@ -33,6 +33,11 @@ func TestSingleNumber(t *testing.T) {
 			got: []int{1,2,5,1,2},
 			want: 5,
 		},
+		{
+			description: "should return 7 if given [1,2,7,1,2,3,4,4,3]",
+			got: []int{1,2,7,1,2,3,4,4,3},
+			want: 7,
+		},
 	} {
 		t.Run(tc.description, func(t *testing.T) {
 			is := is.New(t)
