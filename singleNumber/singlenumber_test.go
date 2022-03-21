@@ -29,7 +29,7 @@ func TestSingleNumber(t *testing.T) {
 			want: 4,
 		},
 		{
-			description: "should return 5 if given [,1,2,5,1,2]",
+			description: "should return 5 if given [1,2,5,1,2]",
 			got: []int{1,2,5,1,2},
 			want: 5,
 		},
