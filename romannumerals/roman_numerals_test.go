@@ -154,4 +154,3 @@ func TestEncoder(t *testing.T) {
 		})
 	}
 }
-

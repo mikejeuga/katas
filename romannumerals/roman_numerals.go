@@ -1,7 +1,7 @@
 package romannumerals
 
 type RomanToArabic struct {
-	Roman string
+	Roman  string
 	Arabic int
 }
 
@@ -26,7 +26,7 @@ func RomanNumeral(input int) string {
 
 	for input > 0 {
 		for _, value := range RomanMAP {
-			if input >= value.Arabic{
+			if input >= value.Arabic {
 				output += value.Roman
 				input -= value.Arabic
 				break
@@ -42,5 +42,5 @@ func ArabicNumeral(input string) int {
 	for RomanNumeral(output) != input {
 		output++
 	}
-		return output
+	return output
 }
